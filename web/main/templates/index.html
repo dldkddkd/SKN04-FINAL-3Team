@@ -9,16 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        // Django 템플릿 변수 사용
-        const ncpClientId = "{{ ncp_client_id }}";
-    
-        console.log("NCP Client ID:", ncpClientId);
-    
-        const mapScript = document.createElement('script');
-        mapScript.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${ncpClientId}`;
-        document.head.appendChild(mapScript);
-    </script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4zxezgglub"></script>
 </head>
 <body>
 

@@ -1,12 +1,8 @@
+from django.conf import settings
 from django.shortcuts import render
-import os
 
-
-def map_view(request):
-    context = {
-        'ncp_client_id': os.getenv('NCP_CLIENT_ID')  # .env 파일에서 가져온 값
-    }
-    return render(request, 'index.html', context)
+def index(request):
+    return render(request, 'index.html', {'ncp_client_id': settings.NCP_CLIENT_ID})
 
 def home(request):
     return render(request, 'index.html')

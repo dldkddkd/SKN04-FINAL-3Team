@@ -11,13 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import load_dotenv
-import os
+from decouple import config
 
-load_dotenv()  # .env 파일 로드
-NCP_CLIENT_ID = os.getenv('NCP_CLIENT_ID')
-
-print("Loaded NCP_CLIENT_ID:", NCP_CLIENT_ID)
+# .env 파일에서 NCP_CLIENT_ID 값을 가져옴
+NCP_CLIENT_ID = config('NCP_CLIENT_ID')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -63,7 +60,9 @@ ROOT_URLCONF = "web.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            BASE_DIR / "templates",  # 템플릿 디렉토리
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
